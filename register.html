@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Student Management App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Register Account</h2>
+
+  <!-- User Type Selector -->
+  <select id="userType" onchange="showForm()">
+    <option value="">-- Select User Type --</option>
+    <option value="student">Register as Student</option>
+    <option value="teacher">Register as Teacher</option>
+  </select>
+
+  <!-- Student Registration Form -->
+  <div id="studentForm" style="display: none;">
+    <form id="studentRegisterForm">
+      <h3>Student Registration</h3>
+      <label>Photo:</label>
+      <input type="file" id="studentPhoto" accept="image/*" required>
+
+      <label>Full Name:</label>
+      <input type="text" id="studentName" required>
+
+      <label>Email:</label>
+      <input type="email" id="studentEmail" required>
+
+      <label>Department:</label>
+      <select id="studentDept" required>
+        <option value="">-- Select Department --</option>
+        <option value="CST">CST</option>
+        <option value="EEE">EEE</option>
+        <option value="ET">ET</option>
+        <option value="RSC">RSC</option>
+        <option value="FOOD">FOOD</option>
+      </select>
+
+      <label>Roll:</label>
+      <input type="text" id="studentRoll" required>
+
+      <label>Mobile Number:</label>
+      <input type="text" id="studentPhone" required>
+
+      <label>Semester:</label>
+      <input type="text" id="studentSemester" required>
+
+      <label>Shift:</label>
+      <input type="text" id="studentShift" required>
+
+      <label>Password:</label>
+      <input type="password" id="studentPassword" required>
+      <input type="checkbox" onclick="togglePassword('studentPassword')"> Show Password
+
+      <label>Confirm Password:</label>
+      <input type="password" id="studentConfirmPassword" required>
+      <input type="checkbox" onclick="togglePassword('studentConfirmPassword')"> Show Confirm Password
+
+      <button type="submit">Register as Student</button>
+    </form>
+  </div>
+
+  <!-- Teacher Registration Form -->
+  <div id="teacherForm" style="display: none;">
+    <form id="teacherRegisterForm">
+      <h3>Teacher Registration</h3>
+
+      <label>Photo:</label>
+      <input type="file" id="teacherPhoto" accept="image/*" required>
+
+      <label>Email:</label>
+      <input type="email" id="teacherEmail" required>
+
+      <label>Mobile Number:</label>
+      <input type="text" id="teacherPhone" required>
+
+      <label>Password:</label>
+      <input type="password" id="teacherPassword" required>
+      <input type="checkbox" onclick="togglePassword('teacherPassword')"> Show Password
+
+      <label>Confirm Password:</label>
+      <input type="password" id="teacherConfirmPassword" required>
+      <input type="checkbox" onclick="togglePassword('teacherConfirmPassword')"> Show Confirm Password
+
+      <button type="submit">Register as Teacher</button>
+    </form>
+  </div>
+
+  <a href="index.html">Already have an account? Log in here</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
